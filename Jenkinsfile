@@ -22,8 +22,10 @@ node('php'){
         withCredentials([string(credentialsId: 'HUB', variable: 'HUB')]) {
             sh '''
             docker login -u vandocouto -p $HUB hub.docker.com
-            docker push vandocouto/todoapi:1.0.0
             '''
          }
+    }
+    stage('push') {
+        sh "docker push vandocouto/todoapi:$BUILD_NUMBER"
     }
 }
