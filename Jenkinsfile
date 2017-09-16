@@ -20,7 +20,7 @@ node('php'){
     
     stage('Docker Ship') {
         withCredentials([string(credentialsId: 'HUB', variable: 'HUB')]) {     
-            sh  'sudo docker login -u churrops -p $HUB hub.docker.com'
+            sh  'sudo docker login -u vandocouto -p $HUB hub.docker.com'
             sh  'docker push vandocouto/todoapi:$BUILD_NUMBER'
         }
     }
