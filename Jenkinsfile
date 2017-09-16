@@ -26,6 +26,5 @@ node('php'){
          }
     }
     stage('push') {
-        sh "docker push vandocouto/todoapi:$BUILD_NUMBER"
+        sh 'docker push vandocouto/todoapi:$BUILD_NUMBER'
     }
-}
