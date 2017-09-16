@@ -22,7 +22,7 @@ node('php'){
         withCredentials([string(credentialsId: 'HUB', variable: 'HUB')]) {
             sh '''
             docker login -u vandocotuo -p $HUB hub.docker.com
-            docker push vandocouto/todoapi:$BUILD_NUMBER
+            docker push hub.docker.com/vandocouto/todoapi:$BUILD_NUMBER
             '''
          }
     }
